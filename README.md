@@ -1,2 +1,2 @@
-# Algoritmi-e-complessit-
+# Algoritmi-e-complessita
 Implementazioni degli algoritmi trattati nel corso
