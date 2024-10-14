@@ -1,5 +1,5 @@
 # Tabelle dinamiche
-Le **Tabelle dinamiche** sono una struttura dati che aumenta la propria dimensione quando il numero di elementi supera la dimensione totale della tabella.
+Le **Tabelle dinamiche** sono una struttura dati che aumenta la propria dimensione quando il numero di elementi supera la dimensione totale della tabella.<br>
 La dimensione della tabella viene quindi raddoppiata, stessa cosa accade quando il numero di elementi è inferiore ad <img src="https://latex.codecogs.com/png.latex?\frac{1}{2}" alt="1/2" width="0.8%" height="0.8%" align="center"/> la tabella viene dimezzata per ottimizzare il suo spazio occupato in memoria.
 
 ---
