@@ -8,6 +8,6 @@ Si assume che il nodo oggetto di una di queste operazioni, nel tempo venga riuti
 
 L'operazione di ricerca all'interno di uno Splay Tree viene effettuata attravarso una procedura di **Splay**.
 La procedura di Splay permette all'ultimo nodo su cui è stata effettuata una delle tre operazioni di essere spostato alla radice senza però andare contro la proprietà dell'albero binario di ricerca, ciò viene fatto attraverso una serie di rotazioni tra i nodi:
-- Zig 
-- Zig-Zig
-- Zig-Zag
+- Zig<br> <p align="center"> <img src="Image/Zig.png" alt="Zig operation" width="30%" height="30%"/> </p>
+- Zig-Zig<br> <p align="center"> <img src="Image/Zig-zig.png" alt="Zig-zig operation" width="30%" height="30%"/> </p>
+- Zig-Zag<br> <p align="center"> <img src="Image/Zig-zag.png" alt="Zig-zag operation" width="30%" height="30%"/> </p>
