@@ -91,7 +91,7 @@ Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo
 
 <p align=center>$\Delta \Phi(T) \leq 3\ R_f(x)-2-2\ R_i(x)-R_i(x)$</p>
 <p align=center>$\Delta \Phi(T) \leq 3\ R_f(x)-2-3\ R_i(x)$</p>
-<p align=center>$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))+2$</p>
+<p align=center>$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2$</p>
 
 Si può quindi definire il costo ammortizzato del caso Zig-zig come:
 
