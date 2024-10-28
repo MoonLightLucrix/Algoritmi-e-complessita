@@ -105,3 +105,36 @@ Si può quindi definire il costo ammortizzato del caso Zig-zig come:
 
 #### Caso Zig-zag
 <p align="center"> <img src="Image/ZigzagDim.png" alt="Zig-zag dimostration" width="50%" height="50%"/>
+<p align="center">$\Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)$</p>
+
+Si osserva che:
+
+<p align="center">$S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$</p>
+
+Quindi:
+
+<p align="center">$\Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)$</p>
+
+Usando il _lemma tecnico_:
+
+<p align="center">$\Delta \Phi(T) \leq 2\ R_f(x)-2-R_i(x)-R_i(p)$</p>
+
+Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo modo la maggiorazione continua ancora a valere
+
+<p align="center">$\Delta \Phi(T) \leq 2\ R_f(x)-2-R_i(x)-R_i(x)$</p>
+<p align="center">$\Delta \Phi(T) \leq 2\ R_f(x)-2-2\ R_i(x)$</p>
+<p align="center">$\Delta \Phi(T) \leq 2\ (R_f(x)-R_i(x))-2$</p>
+
+Maggiorando per 3 anziché 2 vale ancora la maggiorazione:
+
+<p align="center">$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2$</p>
+
+Si può quindi definire il costo ammortizzato del caso Zig-zag come:
+
+<table align="center">
+  <tr>
+    <td> 
+      $\hat{c}_{zig-zig} \leq 3\ (R_f(x)-R_i(x))$
+    </td>
+  </tr>
+</table>
