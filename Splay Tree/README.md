@@ -133,8 +133,8 @@ Si può quindi definire il costo ammortizzato del caso Zig-zag come:
 
 <table align="center">
   <tr>
-    <td> 
-      $\hat{c}_{zig-zig} \leq 3\ (R_f(x)-R_i(x))$
+    <td>
+      $\hat{c}_{zig-zag} \leq 3\ (R_f(x)-R_i(x))$
     </td>
   </tr>
 </table>
