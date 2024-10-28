@@ -40,3 +40,21 @@ Utilizzando il metodo del potenziale per calcolare il costo ammortizzato della p
 ### Dimostrazione
 #### Caso Zig
 <p align="center"> <img src="Image/ZigDim.png" alt="Zig dimostration" width="50%" height="50%"/>
+
+Si può facilmente osservare che, prendendo in considerazione il nodo $x$:
+
+<p align=center>$S_f(x) \geq S_i(x)$</p>
+
+Quindi
+
+<p align=center>$R_f(x) \geq R_i(x)$</p>
+<p align=center>$\Delta \Phi(T)=R_f(x)-R_i(x)$</p>
+<p align=center>$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))$</p>
+
+Si può quindi definire il costo ammortizzato del caso Zig come:
+
+<p align=center>$\boxed{\hat{c}_{zig} \leq 3\ (R_f(x)-R_i(x))+1}$</p>
+
+<div style="border: 1px solid #000; padding: 10px; background-color: #f9f9f9;">
+  Questo è un riquadro di testo evidenziato.
+</div>
