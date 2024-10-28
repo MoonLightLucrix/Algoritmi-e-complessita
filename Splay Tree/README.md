@@ -45,7 +45,7 @@ Si può facilmente osservare che, prendendo in considerazione il nodo $x$:
 
 <p align=center>$S_f(x) \geq S_i(x)$</p>
 
-Quindi
+Quindi:
 
 <p align=center>$R_f(x) \geq R_i(x)$</p>
 <p align=center>$\Delta \Phi(T)=R_f(x)-R_i(x)$</p>
