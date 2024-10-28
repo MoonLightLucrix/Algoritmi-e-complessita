@@ -76,4 +76,29 @@ Quindi:
 Si può maggiorare:
 
 <p align=center>$S_f(x) \geq S_f(p) \rightarrow R_f(x) \geq R_f(p)$</p>
+
+Ottenendo:
+
 <p align=center>$\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)$</p>
+<p align=center>$\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)+R_i(x)-R_i(x)$</p>
+
+Applicando il _lemma tecnico_:
+
+<p align=center>$S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2\ R_f(x)-2$</p>
+<p align=center>$\Delta \Phi(T) \leq 2\ R_f(x)-2+R_f(x)-2\ R_i(x)-R_i(p)$</p>
+
+Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo modo la maggiorazione continua ancora a valere
+
+<p align=center>$\Delta \Phi(T) \leq 3\ R_f(x)-2-2\ R_i(x)-R_i(x)$</p>
+<p align=center>$\Delta \Phi(T) \leq 3\ R_f(x)-2-3\ R_i(x)$</p>
+<p align=center>$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))+2$</p>
+
+Si può quindi definire il costo ammortizzato del caso Zig-zig come:
+
+<table align="center">
+  <tr>
+    <td> 
+      $\hat{c}_{zig-zig} \leq 3\ (R_f(x)-R_i(x))$
+    </td>
+  </tr>
+</table>
