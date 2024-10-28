@@ -63,3 +63,12 @@ Si può quindi definire il costo ammortizzato del caso Zig come:
 
 #### Caso Zig-zig
 <p align="center"> <img src="Image/ZigzigDim.png" alt="Zig-zig dimostration" width="50%" height="50%"/>
+<p align=center>$\Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)$</p>
+
+Si nota immediatamente che:
+
+<p align=center>$S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$</p>
+
+Quindi:
+
+<p align=center>$\Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)$</p>
