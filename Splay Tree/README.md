@@ -72,3 +72,8 @@ Si nota immediatamente che:
 Quindi:
 
 <p align=center>$\Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)$</p>
+
+Si può maggiorare:
+
+<p align=center>$S_f(x) \geq S_f(p) \rightarrow R_f(x) \geq R_f(p)$</p>
+<p align=center>$\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)$</p>
