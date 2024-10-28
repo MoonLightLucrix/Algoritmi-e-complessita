@@ -104,3 +104,4 @@ Si può quindi definire il costo ammortizzato del caso Zig-zig come:
 </table>
 
 #### Caso Zig-zag
+<p align="center"> <img src="Image/ZigzagDim.png" alt="Zig-zag dimostration" width="50%" height="50%"/>
