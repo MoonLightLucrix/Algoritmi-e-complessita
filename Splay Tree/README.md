@@ -31,7 +31,7 @@ Utilizzando il metodo del potenziale per calcolare il costo ammortizzato della p
 
 <p align=center>$S(\nu)=_{DEF}\text{numeri di nodi del sotto albero radicato in}\ \nu$</p>
 <p align=center>$R(\nu)=_{DEF}\text{Il rango di}\ \nu\text{, definito come}\ \log_2(S(\nu))$</p>
-<p align=center>$\Phi(T)=_{DEF}\text{La funzione potenziale, definita come}\ \sum_{\nu \in T}R(\nu)$</p>
+<p align=center>$\Phi(T)=_{DEF}\text{La funzione potenziale, definita come}\ \sum_{\nu \in T}{R(\nu)}$</p>
 
 ### Teorema
 > Sia data la procedura di splay, il suo costo ammortizzato è al più
@@ -62,4 +62,4 @@ Si può quindi definire il costo ammortizzato del caso Zig come:
 </table>
 
 #### Caso Zig-zig
-<p align="center"> <img src="Image/ZigzigDim.png" alt="Zig dimostration" width="50%" height="50%"/>
+<p align="center"> <img src="Image/ZigzigDim.png" alt="Zig-zig dimostration" width="50%" height="50%"/>
