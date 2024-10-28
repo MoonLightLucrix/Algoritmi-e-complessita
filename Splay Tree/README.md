@@ -53,8 +53,12 @@ Quindi
 
 Si può quindi definire il costo ammortizzato del caso Zig come:
 
-<p align=center>$\boxed{\hat{c}_{zig} \leq 3\ (R_f(x)-R_i(x))+1}$</p>
+<table align="center">
+  <tr>
+    <td> 
+      $\hat{c}_{zig} \leq 3\ (R_f(x)-R_i(x))+1$
+    </td>
+  </tr>
+</table>
 
-<div style="border: 1px solid #000; padding: 10px; background-color: #f9f9f9;">
-  Questo è un riquadro di testo evidenziato.
-</div>
+#### Caso Zig-zig
