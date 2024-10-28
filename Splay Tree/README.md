@@ -30,4 +30,5 @@ In particolare si definiscano i costi per ognuna delle rotazioni:
 e siano
 
 <p align=center>$S(\nu)=_{DEF}\text{numeri di nodi del sotto albero radicato in}\ \nu$</p>
-<p align=center>$R(\nu)=_{DEF}\text{Il rango di}\ \nu\text{, definito come} \log_2(S(\nu))$</p>
+<p align=center>$R(\nu)=_{DEF}\text{Il rango di}\ \nu\text{, definito come}\ \log_2(S(\nu))$</p>
+<p align=center>$\Phi(T)=_{DEF}\text{La funzione potenziale definita come}\ \sum_{\nu \in T}R(\nu)$</p>
