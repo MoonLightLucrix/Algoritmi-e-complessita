@@ -39,3 +39,4 @@ Utilizzando il metodo del potenziale per calcolare il costo ammortizzato della p
 
 ### Dimostrazione
 #### Caso Zig
+<p align="center"> <img src="Image/ZigDim.png" alt="Zig dimostration" width="50%" height="50%"/>
