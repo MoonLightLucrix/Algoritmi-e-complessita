@@ -14,3 +14,5 @@ La procedura di Splay permette all'ultimo nodo su cui è stata effettuata una de
 - Zag<br> <p align="center"> <img src="Image/Zag.png" alt="Zag operation" width="30%" height="30%"/> </p>
 - Zag-Zag<br> <p align="center"> <img src="Image/Zag-zag.png" alt="Zag-zag operation" width="30%" height="30%"/> </p>
 - Zag-Zig<br> <p align="center"> <img src="Image/Zag-zig.png" alt="Zag-zig operation" width="30%" height="30%"/> </p>
+
+Il costo ammortizzato di ogni aggiustamento dovuto alla procedura di splay sarà **$O(\log_2(n))$**, quindi sia $m$ il numero di operazioni principali eseguite, si avrà un costo ammortizzato di **$O(m\ \log_2(n))$**
