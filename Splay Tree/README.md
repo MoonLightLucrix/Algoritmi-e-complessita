@@ -33,8 +33,9 @@ Utilizzando il metodo del potenziale per calcolare il costo ammortizzato della p
 <p align=center>$R(\nu)=_{DEF}\text{Il rango di}\ \nu\text{, definito come}\ \log_2(S(\nu))$</p>
 <p align=center>$\Phi(T)=_{DEF}\text{La funzione potenziale, definita come}\ \sum_{\nu \in T}R(\nu)$</p>
 
-#### Teorema
+### Teorema
 > Sia data la procedura di splay, il suo costo ammortizzato è al più
 > <p align="center">$3\ (R\ (ROOT(T))-R(x))+1$</p>
 
-#### Dimostrazione
+### Dimostrazione
+#### Caso Zig
