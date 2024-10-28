@@ -1,9 +1,11 @@
 # Splay Tree
+## Introduzione
 Ideati da Tarjan e Sleator nel 1985 gli **Splay Tree** sono un tipo di struttura dati ad albero binario di ricerca e di conseguenza hanno le stesse operazioni principali:
 - Inserimento
 - Cancellazione
 - Ricerca
 
+## Procedura di Splay
 Si assume che un nodo, oggetto di una di queste operazioni, nel tempo venga riutilizzato a breve, quindi si cerca di farlo diventare radice o di mantenerlo il più vicino possibile a quest'ultima.
 
 L'operazione di ricerca all'interno di uno Splay Tree viene effettuata attravarso una procedura di **Splay**.
@@ -15,4 +17,17 @@ La procedura di Splay permette all'ultimo nodo su cui è stata effettuata una de
 - Zag-Zag<br> <p align="center"> <img src="Image/Zag-zag.png" alt="Zag-zag operation" width="30%" height="30%"/> </p>
 - Zag-Zig<br> <p align="center"> <img src="Image/Zag-zig.png" alt="Zag-zig operation" width="30%" height="30%"/> </p>
 
-Il costo ammortizzato di ogni aggiustamento dovuto alla procedura di splay sarà **$O(\log_2(n))$**, quindi sia $m$ il numero di operazioni principali eseguite, si avrà un costo ammortizzato di **$O(m\ \log_2(n))$**
+## Analisi armortizzata
+Il costo ammortizzato di ogni aggiustamento dovuto alla procedura di splay sarà $O(\log_2(n))$, quindi sia $m$ il numero di operazioni principali eseguite, si avrà un costo ammortizzato di $O(m\ \log_2(n))$, dove $n$ è il numero di nodi all'interno dell'albero.
+
+In particolare si definiscano i costi per ognuna delle rotazioni:
+| Rotazione | Costo |
+|----------|----------|
+| Zig | 1 |
+| Zig-zig | 2 |
+| Zig-zag | 2 |
+
+e siano
+
+<p align=center>$S(\nu)=_{DEF}\text{numeri di nodi del sotto albero radicato in}\ \nu$</p>
+<p align=center>$R(\nu)=_{DEF}\text{Il rango di}\ \nu\text{, definito come} \log_2(S(\nu))$</p>
