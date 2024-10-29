@@ -140,16 +140,13 @@ $$
 
 Si può quindi definire il costo ammortizzato del caso Zig-zig come:
 
-<table align="center">
-  <tr>
-    <td> 
-      $\hat{c}_{zig-zig} \leq 3\ (R_f(x)-R_i(x))$
-    </td>
-  </tr>
-</table>
+$$
+\hat{c}_{zig-zig} \leq 3\ (R_f(x)-R_i(x))
+$$
 
 #### Caso Zig-zag
 <p align="center"> <img src="Image/ZigzagDim.png" alt="Zig-zag dimostration" width="50%" height="50%"/>
+
 $$
 \Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)
 $$
@@ -194,10 +191,6 @@ $$
 
 Si può quindi definire il costo ammortizzato del caso Zig-zag come:
 
-<table align="center">
-  <tr>
-    <td>
-      $\hat{c}_{zig-zag} \leq 3\ (R_f(x)-R_i(x))$
-    </td>
-  </tr>
-</table>
+$$
+\hat{c}_{zig-zag} \leq 3\ (R_f(x)-R_i(x))
+$$
