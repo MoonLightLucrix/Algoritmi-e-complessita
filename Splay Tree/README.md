@@ -100,7 +100,7 @@ $$
 \Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)+R_i(x)-R_i(x)
 $$
 
-Applicando il _lemma tecnico_ $S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2\ R_f(x)-2$ si ottiene:
+Applicando il _lemma tecnico_ $S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2 \cdot R_f(x)-2$ si ottiene:
 
 $$
 \Delta \Phi(T) \leq 2 \cdot R_f(x)-2+R_f(x)-2 \cdot R_i(x)-R_i(p)
