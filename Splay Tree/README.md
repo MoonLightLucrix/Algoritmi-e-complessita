@@ -1,6 +1,6 @@
 # Splay Tree
 ## Introduzione
-Ideati da Tarjan e Sleator nel 1985 gli **Splay Tree** sono un tipo di struttura dati ad albero binario di ricerca e di conseguenza hanno le stesse operazioni principali:
+Gli Splay Tree sono una struttura dati ad albero binario di ricerca inventata da Tarjan e Sleator nel 1985. Come altri alberi di ricerca, permettono di eseguire le operazioni di:
 - Inserimento
 - Cancellazione
 - Ricerca
@@ -8,8 +8,13 @@ Ideati da Tarjan e Sleator nel 1985 gli **Splay Tree** sono un tipo di struttura
 ## Procedura di Splay
 Si assume che un nodo, oggetto di una di queste operazioni, nel tempo venga riutilizzato a breve, quindi si cerca di farlo diventare radice o di mantenerlo il più vicino possibile a quest'ultima.
 
-L'operazione di ricerca all'interno di uno Splay Tree viene effettuata attravarso una procedura di **Splay**.
-La procedura di Splay permette all'ultimo nodo su cui è stata effettuata una delle tre operazioni di essere spostato alla radice senza però andare contro la proprietà dell'albero binario di ricerca, ciò viene fatto attraverso una serie di rotazioni tra i nodi:
+La caratteristica distintiva degli Splay Tree è la procedura di **splay**, che sfrutta il principio di località temporale, cioè l'ipotesi che un nodo recentemente usato abbia una buona probabilità di essere riutilizzato a breve.
+Lo splay consente di spostare il nodo oggetto dell'ultima operazione fino alla radice, oppure vicino a essa, ottimizzando le operazioni future senza violare le proprietà dell'albero binario di ricerca.
+
+### Operazioni di rotazione nello Splay Tree
+La procedura di splay si basa su una serie di rotazioni per spostare il nodo selezionato verso la radice dell'albero.
+Le principali operazioni di rotazione sono:
+
 - Zig<br> <div align="center"> <img src="Image/Zig.png" alt="Zig operation" width="30%" height="30%"/> </p>
 - Zig-Zig<br> <div align="center"> <img src="Image/Zig-zig.png" alt="Zig-zig operation" width="30%" height="30%"/> </p>
 - Zig-Zag<br> <div align="center"> <img src="Image/Zig-zag.png" alt="Zig-zag operation" width="30%" height="30%"/> </p>
@@ -18,81 +23,62 @@ La procedura di Splay permette all'ultimo nodo su cui è stata effettuata una de
 - Zag-Zig<br> <div align="center"> <img src="Image/Zag-zig.png" alt="Zag-zig operation" width="30%" height="30%"/> </p>
 
 ## Analisi ammortizzata
-Il costo ammortizzato di ogni aggiustamento dovuto alla procedura di splay sarà $O(\log_2(n))$, quindi sia $m$ il numero di operazioni principali eseguite, si avrà un costo ammortizzato di $O(m\ \log_2(n))$, dove $n$ è il numero di nodi all'interno dell'albero.
+La complessità ammortizzata per ciascuna rotazione della procedura di splay è di $O(\log_2(n))$, con $n$ numero di nodi.
+In termini di complessità, su una sequenza di $m$ operazioni di inserimento, cancellazione o ricerca, il costo totale risulterà $O(m \cdot \log_2(n))$.
 
-In particolare si definiscano i costi per ognuna delle rotazioni:
+### Costi di rotazione
+Ogni tipo di rotazione ha un costo definito come segue:
+
 | Rotazione | Costo |
 |----------|----------|
 | Zig | 1 |
 | Zig-zig | 2 |
 | Zig-zag | 2 |
 
-Utilizzando il metodo del potenziale per calcolare il costo ammortizzato della procedura splay, si definiscano:
+Per calcolare il costo ammortizzato della procedura di splay, possiamo utilizzare il **metodo del potenziale**.
+Definiamo le seguenti grandezze:
 
-$$
-S(\nu)=_{DEF}\text{numeri di nodi del sotto albero radicato in}\ \nu
-$$
+- $S(\nu)$: numeri di nodi del sotto albero radicato in $\nu$.
+- $R(\nu)=_{DEF} \log_2(S(\nu))$: rango del nodo $\nu$.
+- $\Phi(T)=\sum _{\nu \in T}R(\nu)$: funzione potenziale dell'albero $T$.
 
-$$
-R(\nu)=_{DEF}\text{Il rango di}\ \nu\text{, definito come}\ \log_2(S(\nu))
-$$
+### Teorema sul costo ammortizzato
+> Il costo ammortizzato della procedura di splay è al più
+>
+> $$
+> 3 \cdot (R(ROOT(T))-R(x))+1
+> $$
+>
+> dove $x$ è il nodo in cui viene eseguita la splay.
 
-$$
-\Phi(T)=_{DEF}\text{La funzione potenziale, definita come} \sum _{\nu \in T} R(\nu)
-$$
-
-### Teorema
-> Sia data la procedura di splay, il suo costo ammortizzato è al più
-
-$$
-3\ (R\ (ROOT(T))-R(x))+1
-$$
-
-### Dimostrazione
+### Dimostrazione per casi
 #### Caso Zig
 <p align="center"> <img src="Image/ZigDim.png" alt="Zig dimostration" width="50%" height="50%"/>
 
-Si può facilmente osservare che, prendendo in considerazione il nodo $x$:
+Si consideri il nodo $x$.
+Dopo la rotazione Zig, $S_f(x)\leq S_i(x)$, quindi $R_f(x)\leq R_i(x)$.
+Il cambiamento nella funzione potenziale risulta:
 
 $$
-S_f(x) \geq S_i(x)
+\Delta \Phi(T)=R_f(x)-R_i(x) \leq 3 \cdot (R_f(x)-R_i(x))
 $$
 
-Quindi:
+Pertanto, il costo ammortizzato della rotazione Zig è:
 
 $$
-R_f(x) \geq R_i(x)
-$$
-
-
-$$
-\Delta \Phi(T)=R_f(x)-R_i(x)
-$$
-
-$$
-\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))
-$$
-
-Si può quindi definire il costo ammortizzato del caso Zig come:
-
-$$
-\hat{c}_{zig} \leq 3\ (R_f(x)-R_i(x))+1
+\hat{c}_{zig} \leq 3 \cdot (R_f(x)-R_i(x))+1
 $$
 
 #### Caso Zig-zig
 <p align="center"> <img src="Image/ZigzigDim.png" alt="Zig-zig dimostration" width="50%" height="50%"/>
 
+La differenza della funzione potenziale è dato da:
+
 $$
 \Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)
 $$
 
-Si nota immediatamente che:
-
-$$
-S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)
-$$
-
-Quindi:
+Dove $S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$, da cui segue:
 
 $$
 \Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)
@@ -114,34 +100,30 @@ $$
 \Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)+R_i(x)-R_i(x)
 $$
 
-Applicando il _lemma tecnico_:
+Applicando il _lemma tecnico_ $S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2\ R_f(x)-2$ si ottiene:
 
 $$
-S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2\ R_f(x)-2
-$$
-
-$$
-\Delta \Phi(T) \leq 2\ R_f(x)-2+R_f(x)-2\ R_i(x)-R_i(p)
+\Delta \Phi(T) \leq 2 \cdot R_f(x)-2+R_f(x)-2 \cdot R_i(x)-R_i(p)
 $$
 
 Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo modo la maggiorazione continua ancora a valere
 
 $$
-\Delta \Phi(T) \leq 3\ R_f(x)-2-2\ R_i(x)-R_i(x)
+\Delta \Phi(T) \leq 3 \cdot R_f(x)-2-2 \cdot R_i(x)-R_i(x)
 $$
 
 $$
-\Delta \Phi(T) \leq 3\ R_f(x)-2-3\ R_i(x)
+\Delta \Phi(T) \leq 3 \cdot R_f(x)-2-3 \cdot R_i(x)
 $$
 
 $$
-\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2
+\Delta \Phi(T) \leq 3 \cdot (R_f(x)-R_i(x))-2
 $$
 
-Si può quindi definire il costo ammortizzato del caso Zig-zig come:
+E il costo ammortizzato della rotazione Zig-Zig è quindi:
 
 $$
-\hat{c}_{zig-zig} \leq 3\ (R_f(x)-R_i(x))
+\hat{c}_{zig-zig} \leq 3 \cdot (R_f(x)-R_i(x))
 $$
 
 #### Caso Zig-zag
