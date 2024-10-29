@@ -81,7 +81,10 @@ $$
 
 #### Caso Zig-zig
 <p align="center"> <img src="Image/ZigzigDim.png" alt="Zig-zig dimostration" width="50%" height="50%"/>
-<p align=center>$\Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)$</p>
+
+$$
+\Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)
+$$
 
 Si nota immediatamente che:
 
