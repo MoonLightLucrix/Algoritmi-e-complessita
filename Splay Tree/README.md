@@ -194,3 +194,55 @@ Si può quindi definire il costo ammortizzato del caso Zig-zag come:
 $$
 \hat{c}_{zig-zag} \leq 3\ (R_f(x)-R_i(x))
 $$
+
+#### Costo ammortizzato di uno splay
+
+Quindi sia definito il costo ammortizzato di uno splay considerando tutte le possibili rotazioni possibili come:
+
+$$
+\hat{c}_{splay} \leq \sum _{j=0}^{n} 3\ (R _f^{(j)}(x)-R _i^{(j)}(x))+1
+$$
+
+Equivale a scrivere:
+
+$$
+\hat{c}_{splay} \leq \sum _{j=0}^{n} 3\ (R _f^{(j)}(x)-R _f^{(j-1)}(x))+1
+$$
+
+La sommatoria può essere svolta come _serie telescopica_:
+
+$$
+\hat{c}_{splay} \leq 3\ (R _f^{(n)}(x)-R _f^{(1)}(x))+1
+$$
+
+Dove $R _f^{(n)}(x)$ equivale alla posizione del nodo $x$ dopo aver eseguito tutte le rotazioni quindi al rango quando $x$ si troverà alla radice, mentre $R _f^{(1)}(x)$ il rango del nodo quando è stato appena inserito.
+
+Quindi si può riscrivere la disequazione come:
+
+$$
+\hat{c}_{splay} \leq 3\ (R(ROOT(T))-R(x))+1
+$$
+
+Continuando si può ancora maggiorare:
+
+$$
+\hat{c}_{splay} \leq 3\ (R(ROOT(T))-R(x))+1 \leq 3\ (R(ROOT(T)))+1
+$$
+
+Considerando che $R(ROOT(T))$ è $\log_2(n)$ si ottiene:
+
+$$
+\hat{c}_{splay} \leq 3\ \log_2(n)+1
+$$
+
+Si ricava il costo armortizzato della procedura splay come:
+
+$$
+O(\log_2(n))
+$$
+
+Se consideriamo il fatto che può essere eseguito su $m$ operazioni di _inserimento_, _cancellazione_ e _ricerca_ si ottiene una complessità armortizzata di:
+
+$$
+O(m\ \log_2(n))\ \square
+$$
