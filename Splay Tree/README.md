@@ -43,9 +43,10 @@ $$
 
 ### Teorema
 > Sia data la procedura di splay, il suo costo ammortizzato è al più
-> $$
-> 3\ (R\ (ROOT(T))-R(x))+1
-> $$
+
+$$
+3\ (R\ (ROOT(T))-R(x))+1
+$$
 
 ### Dimostrazione
 #### Caso Zig
@@ -74,13 +75,9 @@ $$
 
 Si può quindi definire il costo ammortizzato del caso Zig come:
 
-<table align="center">
-  <tr>
-    <td> 
-      $\hat{c}_{zig} \leq 3\ (R_f(x)-R_i(x))+1$
-    </td>
-  </tr>
-</table>
+$$
+\hat{c}_{zig} \leq 3\ (R_f(x)-R_i(x))+1
+$$
 
 #### Caso Zig-zig
 <p align="center"> <img src="Image/ZigzigDim.png" alt="Zig-zig dimostration" width="50%" height="50%"/>
