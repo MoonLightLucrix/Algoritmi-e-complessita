@@ -88,31 +88,55 @@ $$
 
 Si nota immediatamente che:
 
-<p align=center>$S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$</p>
+$$
+S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)
+$$
 
 Quindi:
 
-<p align=center>$\Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)$</p>
+$$
+\Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)
+$$
 
 Si può maggiorare:
 
-<p align=center>$S_f(x) \geq S_f(p) \rightarrow R_f(x) \geq R_f(p)$</p>
+$$
+S_f(x) \geq S_f(p) \rightarrow R_f(x) \geq R_f(p)
+$$
 
 Ottenendo:
 
-<p align=center>$\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)$</p>
-<p align=center>$\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)+R_i(x)-R_i(x)$</p>
+$$
+\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)
+$$
+
+$$
+\Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)+R_i(x)-R_i(x)
+$$
 
 Applicando il _lemma tecnico_:
 
-<p align=center>$S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2\ R_f(x)-2$</p>
-<p align=center>$\Delta \Phi(T) \leq 2\ R_f(x)-2+R_f(x)-2\ R_i(x)-R_i(p)$</p>
+$$
+S_i(x)+S_f(n) \leq S_f(x) \rightarrow R_i(x)+R_f(n) \leq 2\ R_f(x)-2
+$$
+
+$$
+\Delta \Phi(T) \leq 2\ R_f(x)-2+R_f(x)-2\ R_i(x)-R_i(p)
+$$
 
 Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo modo la maggiorazione continua ancora a valere
 
-<p align=center>$\Delta \Phi(T) \leq 3\ R_f(x)-2-2\ R_i(x)-R_i(x)$</p>
-<p align=center>$\Delta \Phi(T) \leq 3\ R_f(x)-2-3\ R_i(x)$</p>
-<p align=center>$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2$</p>
+$$
+\Delta \Phi(T) \leq 3\ R_f(x)-2-2\ R_i(x)-R_i(x)
+$$
+
+$$
+\Delta \Phi(T) \leq 3\ R_f(x)-2-3\ R_i(x)
+$$
+
+$$
+\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2
+$$
 
 Si può quindi definire il costo ammortizzato del caso Zig-zig come:
 
@@ -126,11 +150,15 @@ Si può quindi definire il costo ammortizzato del caso Zig-zig come:
 
 #### Caso Zig-zag
 <p align="center"> <img src="Image/ZigzagDim.png" alt="Zig-zag dimostration" width="50%" height="50%"/>
-<p align="center">$\Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)$</p>
+$$
+\Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)
+$$
 
 Si osserva che:
 
-<p align="center">$S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$</p>
+$$
+S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)
+$$
 
 Quindi:
 
@@ -146,14 +174,22 @@ $$
 
 Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo modo la maggiorazione continua ancora a valere
 
-<p align="center">$\Delta \Phi(T) \leq 2\ R_f(x)-2-R_i(x)-R_i(x)$</p>
-<p align="center">$\Delta \Phi(T) \leq 2\ R_f(x)-2-2\ R_i(x)$</p>
-<p align="center">$\Delta \Phi(T) \leq 2\ (R_f(x)-R_i(x))-2$</p>
+$$
+\Delta \Phi(T) \leq 2\ R_f(x)-2-R_i(x)-R_i(x)
+$$
+
+$$
+\Delta \Phi(T) \leq 2\ R_f(x)-2-2\ R_i(x)
+$$
+
+$$
+\Delta \Phi(T) \leq 2\ (R_f(x)-R_i(x))-2
+$$
 
 Maggiorando per 3 anziché 2 vale ancora la maggiorazione:
 
 $$
-  \Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2
+\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2
 $$
 
 Si può quindi definire il costo ammortizzato del caso Zig-zag come:
