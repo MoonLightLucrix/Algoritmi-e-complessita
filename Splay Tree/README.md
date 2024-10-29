@@ -43,7 +43,9 @@ $$
 
 ### Teorema
 > Sia data la procedura di splay, il suo costo ammortizzato è al più
-> <p align="center">$3\ (R\ (ROOT(T))-R(x))+1$</p>
+> $$
+> 3\ (R\ (ROOT(T))-R(x))+1
+> $$
 
 ### Dimostrazione
 #### Caso Zig
@@ -51,13 +53,24 @@ $$
 
 Si può facilmente osservare che, prendendo in considerazione il nodo $x$:
 
-<p align=center>$S_f(x) \geq S_i(x)$</p>
+$$
+S_f(x) \geq S_i(x)
+$$
 
 Quindi:
 
-<p align=center>$R_f(x) \geq R_i(x)$</p>
-<p align=center>$\Delta \Phi(T)=R_f(x)-R_i(x)$</p>
-<p align=center>$\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))$</p>
+$$
+R_f(x) \geq R_i(x)
+$$
+
+
+$$
+\Delta \Phi(T)=R_f(x)-R_i(x)
+$$
+
+$$
+\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))
+$$
 
 Si può quindi definire il costo ammortizzato del caso Zig come:
 
