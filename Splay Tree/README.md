@@ -12,6 +12,9 @@
     - [Caso Zig-zig](#caso-zig-zig)
     - [Caso Zig-zag](#caso-zig-zag)
     - [Costo ammortizzato complessivo dello splay](#costo-ammortizzato-complessivo-dello-splay)
+
+### Implementazione
+- [Splay Tree]()
 - [Istruzioni per la compilazione](#istruzioni-per-la-compilazione)
 
 ## Introduzione
