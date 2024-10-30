@@ -1,4 +1,19 @@
 # Splay Tree
+
+## Indice
+- [Introduzione](#introduzione)
+- [Procedura di Splay](#procedura-di-splay)
+  - [Operazioni di rotazione nello Splay Tree](#operazioni-di-rotazione-nello-splay-tree)
+- [Analisi ammortizzata](#analisi-ammortizzata)
+  - [Costi di rotazione](#costi-di-rotazione)
+  - [Teorema sul costo ammortizzato di splay](#teorema-sul-costo-ammortizzato-di-splay)
+  - [Dimostrazione per casi](#dimostrazione-per-casi)
+    - [Caso Zig](#caso-zig)
+    - [Caso Zig-zig](#caso-zig-zig)
+    - [Caso Zig-zag](#caso-zig-zag)
+    - [Costo ammortizzato complessivo dello splay](#costo-ammortizzato-complessivo-dello-splay)
+- [Istruzioni per la compilazione](#istruzioni-per-la-compilazione)
+
 ## Introduzione
 Gli Splay Tree costituiscono una struttura dati di tipo albero binario di ricerca, ideata da Tarjan e Sleator nel 1985, che consente di eseguire le operazioni di:
 - **Inserimento**
