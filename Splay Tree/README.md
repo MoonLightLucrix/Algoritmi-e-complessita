@@ -1,18 +1,18 @@
 # Splay Tree
 ## Introduzione
-Gli Splay Tree sono una struttura dati ad albero binario di ricerca inventata da Tarjan e Sleator nel 1985. Come altri alberi di ricerca, permettono di eseguire le operazioni di:
-- Inserimento
-- Cancellazione
-- Ricerca
+Gli Splay Tree costituiscono una struttura dati di tipo albero binario di ricerca, ideata da Tarjan e Sleator nel 1985, che consente di eseguire le operazioni di:
+- **Inserimento**
+- **Cancellazione**
+- **Ricerca**
 
 ## Procedura di Splay
-Si assume che un nodo, oggetto di una di queste operazioni, nel tempo venga riutilizzato a breve, quindi si cerca di farlo diventare radice o di mantenerlo il più vicino possibile a quest'ultima.
-
-La caratteristica distintiva degli Splay Tree è la procedura di **splay**, che sfrutta il principio di località temporale, cioè l'ipotesi che un nodo recentemente usato abbia una buona probabilità di essere riutilizzato a breve.
-Lo splay consente di spostare il nodo oggetto dell'ultima operazione fino alla radice, oppure vicino a essa, ottimizzando le operazioni future senza violare le proprietà dell'albero binario di ricerca.
+La particolarità degli Splay Tree è la procedura di **splay**, che si basa sul concetto di _località temporale_.
+Questa procedura assume che un nodo, una volta utilizzato, potrebbe essere riutilizzato a breve.
+Per ottimizzare l’accesso futuro, la procedura di splay sposta il nodo oggetto dell’operazione recente verso la radice dell'albero.
+Questo avvicinamento viene effettuato tramite una serie di rotazioni che preservano le proprietà dell'albero binario di ricerca.
 
 ### Operazioni di rotazione nello Splay Tree
-La procedura di splay si basa su una serie di rotazioni per spostare il nodo selezionato verso la radice dell'albero.
+La procedura di splay si basa su una serie di rotazioni per spostare il nodo selezionato (quello su cui si è appena effettuata un'operazione) verso la radice dell'albero.
 Le principali operazioni di rotazione sono:
 
 - Zig<br> <div align="center"> <img src="Image/Zig.png" alt="Zig operation" width="30%" height="30%"/> </p>
@@ -23,8 +23,8 @@ Le principali operazioni di rotazione sono:
 - Zag-Zig<br> <div align="center"> <img src="Image/Zag-zig.png" alt="Zag-zig operation" width="30%" height="30%"/> </p>
 
 ## Analisi ammortizzata
-La complessità ammortizzata per ciascuna rotazione della procedura di splay è di $O(\log_2(n))$, con $n$ numero di nodi.
-In termini di complessità, su una sequenza di $m$ operazioni di inserimento, cancellazione o ricerca, il costo totale risulterà $O(m \cdot \log_2(n))$.
+Negli Splay Tree, il costo ammortizzato di una rotazione è di $O(\log_2(n))$, dove $n$ è il numero di nodi.
+Considerando $m$ operazioni di ricerca, inserimento o cancellazione, quello che si ottiene è una complessità ammortizzata totale di $O(m \cdot \log_2(n))$.
 
 ### Costi di rotazione
 Ogni tipo di rotazione ha un costo definito come segue:
@@ -35,14 +35,15 @@ Ogni tipo di rotazione ha un costo definito come segue:
 | Zig-zig | 2 |
 | Zig-zag | 2 |
 
-Per calcolare il costo ammortizzato della procedura di splay, possiamo utilizzare il **metodo del potenziale**.
-Definiamo le seguenti grandezze:
+L'analisi ammortizzata calcola il costo medio di ogni operazione su una sequenza di operazioni, in questo caso viene sfruttando il **metodo del potenziale**.
+
+Si definiscano le seguenti grandezze:
 
 - $S(\nu)$: numeri di nodi del sotto albero radicato in $\nu$.
 - $R(\nu)=_{DEF} \log_2(S(\nu))$: rango del nodo $\nu$.
 - $\Phi(T)=\sum _{\nu \in T}R(\nu)$: funzione potenziale dell'albero $T$.
 
-### Teorema sul costo ammortizzato
+### Teorema sul costo ammortizzato di splay
 > Il costo ammortizzato della procedura di splay è al più
 >
 > $$
@@ -55,9 +56,13 @@ Definiamo le seguenti grandezze:
 #### Caso Zig
 <p align="center"> <img src="Image/ZigDim.png" alt="Zig dimostration" width="50%" height="50%"/>
 
-Si consideri il nodo $x$.
-Dopo la rotazione Zig, $S_f(x)\leq S_i(x)$, quindi $R_f(x)\leq R_i(x)$.
-Il cambiamento nella funzione potenziale risulta:
+Si supponga che, dopo la rotazione, il numero di nodi nel sottoalbero radicato in $x$ sia aumentato, quindi $S_f(x) \geq S_i(x)$, e di conseguenza:
+
+$$
+R_f(x) \geq R_i(x)
+$$
+
+Calcolando la differenza nella funzione potenziale:
 
 $$
 \Delta \Phi(T)=R_f(x)-R_i(x) \leq 3 \cdot (R_f(x)-R_i(x))
@@ -72,25 +77,19 @@ $$
 #### Caso Zig-zig
 <p align="center"> <img src="Image/ZigzigDim.png" alt="Zig-zig dimostration" width="50%" height="50%"/>
 
-La differenza della funzione potenziale è dato da:
+Nel caso Zig-zig, la differenza nella funzione potenziale risulta:
 
 $$
 \Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)
 $$
 
-Dove $S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$, da cui segue:
+Poiché $S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$, segue:
 
 $$
 \Delta \Phi(T)=R_f(p)+R_f(n)-R_i(x)-R_i(p)
 $$
 
-Si può maggiorare:
-
-$$
-S_f(x) \geq S_f(p) \rightarrow R_f(x) \geq R_f(p)
-$$
-
-Ottenendo:
+Si può maggiorare $S_f(x) \geq S_f(p) \rightarrow R_f(x) \geq R_f(p)$ ottenendo:
 
 $$
 \Delta \Phi(T) \leq R_f(x)+R_f(n)-R_i(x)-R_i(p)
@@ -120,7 +119,7 @@ $$
 \Delta \Phi(T) \leq 3 \cdot (R_f(x)-R_i(x))-2
 $$
 
-E il costo ammortizzato della rotazione Zig-Zig è quindi:
+Quindi, il costo ammortizzato del caso Zig-zig è:
 
 $$
 \hat{c}_{zig-zig} \leq 3 \cdot (R_f(x)-R_i(x))
@@ -129,15 +128,13 @@ $$
 #### Caso Zig-zag
 <p align="center"> <img src="Image/ZigzagDim.png" alt="Zig-zag dimostration" width="50%" height="50%"/>
 
+Nel caso Zig-zag, la differenza nella funzione potenziale risulta:
+
 $$
 \Delta \Phi(T)=R_f(x)+R_f(p)+R_f(n)-R_i(x)-R_i(p)-R_i(n)
 $$
 
-Si osserva che:
-
-$$
-S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)
-$$
+Si osserva che, $S_i(n)=S_f(x) \rightarrow R_i(n)=R_f(x)$
 
 Quindi:
 
@@ -165,7 +162,7 @@ $$
 \Delta \Phi(T) \leq 2\ (R_f(x)-R_i(x))-2
 $$
 
-Maggiorando per 3 anziché 2 vale ancora la maggiorazione:
+Maggiorando per $3$ anziché $2$ vale ancora la maggiorazione:
 
 $$
 \Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2
@@ -177,54 +174,56 @@ $$
 \hat{c}_{zig-zag} \leq 3\ (R_f(x)-R_i(x))
 $$
 
-#### Costo ammortizzato di uno splay
-
-Quindi sia definito il costo ammortizzato di uno splay considerando tutte le possibili rotazioni possibili come:
-
-$$
-\hat{c}_{splay} \leq \sum _{j=0}^{n} 3\ (R _f^{(j)}(x)-R _i^{(j)}(x))+1
-$$
-
-Equivale a scrivere:
+#### Costo ammortizzato complessivo dello splay
+Il costo ammortizzato complessivo della procedura di splay, considerando tutte le rotazioni possibili, è:
 
 $$
-\hat{c}_{splay} \leq \sum _{j=0}^{n} 3\ (R _f^{(j)}(x)-R _f^{(j-1)}(x))+1
+\hat{c}_{splay} \leq \sum _{j=1}^{n} 3 \cdot (R _f^{(j)}(x)-R _i^{(j)}(x))+1
 $$
 
-La sommatoria può essere svolta come _serie telescopica_:
+Dove $j$ equivale alla $j \text{-} esima$ rotazione su $n$ rotazioni per portare il nodo $x$ fino alla radice.
+Ciò quindi, equivale a scrivere:
+
+$$
+\hat{c}_{splay} \leq \sum _{j=1}^{n} 3 \cdot (R _f^{(j)}(x)-R _f^{(j-1)}(x))+1
+$$
+
+La sommatoria può essere svolta come _serie telescopica_, ottenendo:
 
 $$
 \hat{c}_{splay} \leq 3\ (R _f^{(n)}(x)-R _f^{(1)}(x))+1
 $$
 
-Dove $R _f^{(n)}(x)$ equivale alla posizione del nodo $x$ dopo aver eseguito tutte le rotazioni quindi al rango quando $x$ si troverà alla radice, mentre $R _f^{(1)}(x)$ il rango del nodo quando è stato appena inserito.
+Si indica con $R _f^{(n)}(x)$ il rango finale del nodo $x$ dopo aver completato tutte le rotazioni della procedura di splay.
+In questo stato, il nodo $x$ è stato portato alla radice dell’albero.
+D’altro canto, $R _f^{(1)}(x)$ rappresenta il rango di $x$ prima di iniziare la procedura di splay, ovvero la sua posizione originale nell'albero prima di ogni rotazione.
 
-Quindi si può riscrivere la disequazione come:
+Quindi si può riscrivere la disugualianza come:
 
 $$
 \hat{c}_{splay} \leq 3\ (R(ROOT(T))-R(x))+1
 $$
 
-Continuando si può ancora maggiorare:
+Continuando con la maggiorazione, si ottiene:
 
 $$
 \hat{c}_{splay} \leq 3\ (R(ROOT(T))-R(x))+1 \leq 3\ (R(ROOT(T)))+1
 $$
 
-Considerando che $R(ROOT(T))$ è $\log_2(n)$ si ottiene:
+Considerando che $R(ROOT(T)) \approx \log_2(n)$ si ottiene:
 
 $$
-\hat{c}_{splay} \leq 3\ \log_2(n)+1
+\hat{c}_{splay} \leq 3 \cdot \log_2(n)+1
 $$
 
-Si ricava il costo armortizzato della procedura splay come:
+Si conclude quindi che il costo ammortizzato della procedura di splay è:
 
 $$
 O(\log_2(n))
 $$
 
-Se consideriamo il fatto che può essere eseguito su $m$ operazioni di _inserimento_, _cancellazione_ e _ricerca_ si ottiene una complessità armortizzata di:
+e, considerando $m$ operazioni, la complessità ammortizzata complessiva è:
 
 $$
-O(m\ \log_2(n))\ \square
+O(m \cdot \log_2(n)) \quad \square
 $$
