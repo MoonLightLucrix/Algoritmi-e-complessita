@@ -145,33 +145,33 @@ $$
 Usando il _lemma tecnico_:
 
 $$
-\Delta \Phi(T) \leq 2\ R_f(x)-2-R_i(x)-R_i(p)
+\Delta \Phi(T) \leq 2 \cdot R_f(x)-2-R_i(x)-R_i(p)
 $$
 
 Si sottrae a $\Delta \Phi(T)$ la quantità $R_i(x)$ anziché $R_i(p)$, in questo modo la maggiorazione continua ancora a valere
 
 $$
-\Delta \Phi(T) \leq 2\ R_f(x)-2-R_i(x)-R_i(x)
+\Delta \Phi(T) \leq 2 \cdot R_f(x)-2-R_i(x)-R_i(x)
 $$
 
 $$
-\Delta \Phi(T) \leq 2\ R_f(x)-2-2\ R_i(x)
+\Delta \Phi(T) \leq 2 \cdot R_f(x)-2-2\ R_i(x)
 $$
 
 $$
-\Delta \Phi(T) \leq 2\ (R_f(x)-R_i(x))-2
+\Delta \Phi(T) \leq 2 \cdot (R_f(x)-R_i(x))-2
 $$
 
 Maggiorando per $3$ anziché $2$ vale ancora la maggiorazione:
 
 $$
-\Delta \Phi(T) \leq 3\ (R_f(x)-R_i(x))-2
+\Delta \Phi(T) \leq 3 \cdot (R_f(x)-R_i(x))-2
 $$
 
 Si può quindi definire il costo ammortizzato del caso Zig-zag come:
 
 $$
-\hat{c}_{zig-zag} \leq 3\ (R_f(x)-R_i(x))
+\hat{c}_{zig-zag} \leq 3 \cdot (R_f(x)-R_i(x))
 $$
 
 #### Costo ammortizzato complessivo dello splay
@@ -191,7 +191,7 @@ $$
 La sommatoria può essere svolta come _serie telescopica_, ottenendo:
 
 $$
-\hat{c}_{splay} \leq 3\ (R _f^{(n)}(x)-R _f^{(1)}(x))+1
+\hat{c}_{splay} \leq 3 \cdot (R _f^{(n)}(x)-R _f^{(1)}(x))+1
 $$
 
 Si indica con $R _f^{(n)}(x)$ il rango finale del nodo $x$ dopo aver completato tutte le rotazioni della procedura di splay.
@@ -201,13 +201,13 @@ D’altro canto, $R _f^{(1)}(x)$ rappresenta il rango di $x$ prima di iniziare l
 Quindi si può riscrivere la disugualianza come:
 
 $$
-\hat{c}_{splay} \leq 3\ (R(ROOT(T))-R(x))+1
+\hat{c}_{splay} \leq 3 \cdot (R(ROOT(T))-R(x))+1
 $$
 
 Continuando con la maggiorazione, si ottiene:
 
 $$
-\hat{c}_{splay} \leq 3\ (R(ROOT(T))-R(x))+1 \leq 3\ (R(ROOT(T)))+1
+\hat{c}_{splay} \leq 3 \cdot (R(ROOT(T))-R(x))+1 \leq 3\ (R(ROOT(T)))+1
 $$
 
 Considerando che $R(ROOT(T)) \approx \log_2(n)$ si ottiene:
