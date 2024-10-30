@@ -227,3 +227,8 @@ e, considerando $m$ operazioni, la complessità ammortizzata complessiva è:
 $$
 O(m \cdot \log_2(n)) \quad \square
 $$
+
+---
+
+## Istruzioni per la compilazione
+Usare il comando `make`su questa directory, se la compilazione è andata a buon fine il programma può essere avviato tramite il comando `make run`.
