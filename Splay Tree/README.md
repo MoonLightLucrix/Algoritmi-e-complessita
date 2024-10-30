@@ -1,6 +1,8 @@
 # Splay Tree
 
 ## Indice
+
+### Teoria
 - [Introduzione](#introduzione)
 - [Procedura di Splay](#procedura-di-splay)
   - [Operazioni di rotazione nello Splay Tree](#operazioni-di-rotazione-nello-splay-tree)
@@ -13,8 +15,8 @@
     - [Caso Zig-zag](#caso-zig-zag)
     - [Costo ammortizzato complessivo dello splay](#costo-ammortizzato-complessivo-dello-splay)
 
-### Implementazione
-- [Splay Tree]()
+### Codice
+- [Splay Tree](https://github.com/MoonLightLucrix/Algoritmi-e-complessita/tree/master/Splay%20Tree/src)
 - [Istruzioni per la compilazione](#istruzioni-per-la-compilazione)
 
 ## Introduzione
