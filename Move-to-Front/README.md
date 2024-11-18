@@ -17,7 +17,7 @@ L'euristica **Move-to-Front** prevede una serie di scambi tra i nodi addiacenti,
 Quindi saranno necessari $k-1$ scambi totali per portare _f_ fino alla testa della lista, il costo delle operazioni di scambi dopo la ricerca sarà quindi di $k-1$.
 
 <p align="center">
-  <img src="Image/Lista MF.png" alt="Lista" width="80%" height="80%">
+  <img src="Image/Lista MF.png" alt="Lista MF" width="80%" height="80%">
   <br>
   <em><font size="1">Figura 6.2: Processo che porta l'elemento f in testa.</font></em>
 </p>
@@ -44,7 +44,7 @@ Date due liste $L_1$ e $L_2$ contenenti gli stessi elementi ma di ordine diverso
   <em><font size="1">Figura 6.3: Due liste con configurazioni diverse.</font></em>
 </p>
 
-e sia una coppia $G =\{g_i,g_j\}$ dove $\{\forall i,j \in \mathbb{N} \mid i,j \geq 1 \land i≠j \}$ e $G \subseteq L_1 \cap L_2$.
+e sia una coppia $G =\{g_i,g_j\}$ dove $\forall i,j \in \mathbb{N} \mid i,j \geq 1 \land i≠j$ e $G \subseteq L_1$.
 
 $G$ è un **inversione** tra $L_1$ e $L_2$ se in $L_1$ la coppia $G$ ha gli indici $i<j$ e in $L_2$ la coppia $G$ ha gli indici $i>j$.
 
@@ -78,3 +78,9 @@ $$
 $$
 
 data una lista $L$ dove vengono eseguiti contemporaneamente sia _Move-to-Front_ e _AL_
+
+<p align="center">
+  <img src="Image/Schema delle liste.png" alt="Schema delle liste" width="80%" height="80%">
+  <br>
+  <em><font size="1">Figura 6.4: Configurazioni con entrambi gli algoritmi.</font></em>
+</p>
