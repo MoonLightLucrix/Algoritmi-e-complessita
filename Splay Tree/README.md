@@ -91,7 +91,7 @@ $$
 Pertanto, il costo ammortizzato della rotazione Zig è:
 
 $$
-\hat{c}_{zig} \leq 3 \cdot (R_f(x)-R_i(x))+1
+\hat{c}_ {zig} \leq 3 \cdot (R_f(x)-R_i(x))+1
 $$
 
 #### Caso Zig-zig
