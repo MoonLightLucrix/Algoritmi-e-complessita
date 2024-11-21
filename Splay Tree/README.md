@@ -1,15 +1,15 @@
-# Splay Tree
+# 2 Splay Tree
 
 ## Indice
 
 ### Teoria
-- [Introduzione](#introduzione)
-- [Procedura di Splay](#procedura-di-splay)
-  - [Operazioni di rotazione nello Splay Tree](#operazioni-di-rotazione-nello-splay-tree)
-- [Analisi ammortizzata](#analisi-ammortizzata)
-  - [Costi di rotazione](#costi-di-rotazione)
-  - [Teorema sul costo ammortizzato di splay](#teorema-sul-costo-ammortizzato-di-splay)
-  - [Dimostrazione per casi](#dimostrazione-per-casi)
+- [2.1 Introduzione](#introduzione)
+- [2.2 Procedura di Splay](#procedura-di-splay)
+  - [2.2.1 Operazioni di rotazione nello Splay Tree](#operazioni-di-rotazione-nello-splay-tree)
+- [2.3 Analisi ammortizzata](#analisi-ammortizzata)
+  - [2.3.1 Costi di rotazione](#costi-di-rotazione)
+  - [2.3.2 Teorema sul costo ammortizzato di splay](#teorema-sul-costo-ammortizzato-di-splay)
+  - [2.3.3 Dimostrazione per casi](#dimostrazione-per-casi)
     - [Caso Zig](#caso-zig)
     - [Caso Zig-zig](#caso-zig-zig)
     - [Caso Zig-zag](#caso-zig-zag)
@@ -19,19 +19,19 @@
 - [Splay Tree](https://github.com/MoonLightLucrix/Algoritmi-e-complessita/tree/master/Splay%20Tree/src)
 - [Istruzioni per la compilazione](#istruzioni-per-la-compilazione)
 
-## Introduzione
+## 2.1 Introduzione
 Gli Splay Tree costituiscono una struttura dati di tipo albero binario di ricerca, ideata da Tarjan e Sleator nel 1985, che consente di eseguire le operazioni di:
 - **Inserimento**
 - **Cancellazione**
 - **Ricerca**
 
-## Procedura di Splay
+## 2.2 Procedura di Splay
 La particolarità degli Splay Tree è la procedura di **splay**, che si basa sul concetto di _località temporale_.
 Questa procedura assume che un nodo, una volta utilizzato, potrebbe essere riutilizzato a breve.
 Per ottimizzare l’accesso futuro, la procedura di splay sposta il nodo oggetto dell’operazione recente verso la radice dell'albero.
 Questo avvicinamento viene effettuato tramite una serie di rotazioni che preservano le proprietà dell'albero binario di ricerca.
 
-### Operazioni di rotazione nello Splay Tree
+### 2.2.1 Operazioni di rotazione nello Splay Tree
 La procedura di splay si basa su una serie di rotazioni per spostare il nodo selezionato (quello su cui si è appena effettuata un'operazione) verso la radice dell'albero.
 Le principali operazioni di rotazione sono:
 
@@ -42,11 +42,11 @@ Le principali operazioni di rotazione sono:
 - Zag-Zag<br> <div align="center"> <img src="Image/Zag-zag.png" alt="Zag-zag operation" width="30%" height="30%"/> </p>
 - Zag-Zig<br> <div align="center"> <img src="Image/Zag-zig.png" alt="Zag-zig operation" width="30%" height="30%"/> </p>
 
-## Analisi ammortizzata
+## 2.3 Analisi ammortizzata
 Negli Splay Tree, il costo ammortizzato di una rotazione è di $O(\log_2(n))$, dove $n$ è il numero di nodi.
 Considerando $m$ operazioni di ricerca, inserimento o cancellazione, quello che si ottiene è una complessità ammortizzata totale di $O(m \cdot \log_2(n))$.
 
-### Costi di rotazione
+### 2.3.1 Costi di rotazione
 Ogni tipo di rotazione ha un costo definito come segue:
 
 | Rotazione | Costo |
@@ -63,7 +63,7 @@ Si definiscano le seguenti grandezze:
 - $R(\nu)=_{DEF} \log_2(S(\nu))$: rango del nodo $\nu$.
 - $\Phi(T)=\sum _{\nu \in T}R(\nu)$: funzione potenziale dell'albero $T$.
 
-### Teorema sul costo ammortizzato di splay
+### 2.3.2 Teorema sul costo ammortizzato di splay
 > Il costo ammortizzato della procedura di splay è al più
 >
 > $$
@@ -72,7 +72,7 @@ Si definiscano le seguenti grandezze:
 >
 > dove $x$ è il nodo in cui viene eseguita la splay.
 
-### Dimostrazione per casi
+### 2.3.3 Dimostrazione per casi
 #### Caso Zig
 <p align="center"> <img src="Image/ZigDim.png" alt="Zig dimostration" width="50%" height="50%"/>
 
@@ -201,7 +201,7 @@ $$
 \hat{c}_{splay} \leq \sum _{j=1}^{n} 3 \cdot (R _f^{(j)}(x)-R _i^{(j)}(x))+1
 $$
 
-Dove $j$ equivale alla $j \text{-} esima$ rotazione su $n$ rotazioni per portare il nodo $x$ fino alla radice.
+Dove $j$ equivale alla $j$-esima rotazione su $n$ rotazioni per portare il nodo $x$ fino alla radice.
 Ciò quindi, equivale a scrivere:
 
 $$
