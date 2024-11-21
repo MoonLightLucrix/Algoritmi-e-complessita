@@ -116,7 +116,7 @@ data una lista $L$ dove vengono eseguiti contemporaneamente sia _Move-to-Front_ 
   <em><font size="1">Figura 6.4: Configurazioni con entrambi gli algoritmi.</font></em>
 </p>
 
-sia definita tramite $s=c_i^{AL}$ il costo reale dell'$i$-esimo accesso da parte del generico algoritmo _AL_ e $a$, $b$ e $b'$ le inversioni tra $C_{i-1}^{MF}$ e $C_{i-1}^{AL}$, tra $C_i^{MF}$ e $C_i^{AL}$ e tra $C_i^{MF}$ e $C_{i-1}^{AL}$ rispettivamente.
+sia definita tramite $s=c_i^{AL}$ il costo reale dell' $i$-esimo accesso da parte del generico algoritmo _AL_ e $a$, $b$ e $b'$ le inversioni tra $C_{i-1}^{MF}$ e $C_{i-1}^{AL}$, tra $C_i^{MF}$ e $C_i^{AL}$ e tra $C_i^{MF}$ e $C_{i-1}^{AL}$ rispettivamente.
 
 Si definisce il costo ammortizzato $\hat{c}_i^{MF}$ come:
 
