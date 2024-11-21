@@ -224,7 +224,7 @@ $$
 considerando pure tutti gli accessi contenuti nell'insieme $A$, si ottiene:
 
 $$
-\sum_{i=1}^n \hat{c}_i^{MF} \leq 4 \cdot \sum_{i=1}^n c_i^{AL}
+\sum_ {i=1}^n \hat{c}_ i^{MF} \leq 4 \cdot \sum_ {i=1}^n c_i^{AL}
 $$
 
 sapendo che $\Phi(0)$ equivale alla lista $L$ con $0$ inversioni si ha che:
@@ -236,13 +236,13 @@ $$
 e sapendo che:
 
 $$
-\sum_{i=1}^{n} c_i \leq \sum_{i=1}^{n} \hat{c}_i \leftrightarrow \Phi(i) \geq \Phi(i-1)
+\sum_ {i=1}^{n} c_i \leq \sum_ {i=1}^{n} \hat{c}_i \leftrightarrow \Phi(i) \geq \Phi(i-1)
 $$
 
 allora:
 
 $$
-\sum_{i=1}^{n} c_i^{MF} \leq \sum_{i=1}^n \hat{c}_i^{MF} \leq 4 \cdot \sum_{i=1}^n c_i^{AL}
+\sum_ {i=1} ^ {n} c_i^{MF} \leq \sum_ {i=1}^n \hat{c}_ i^{MF} \leq 4 \cdot \sum_ {i=1}^n c_i^{AL}
 $$
 
 quindi:
