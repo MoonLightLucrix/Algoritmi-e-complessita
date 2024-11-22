@@ -227,7 +227,7 @@ $$
 Continuando con la maggiorazione, si ottiene:
 
 $$
-\hat{c}_{splay} \leq 3 \cdot (R(ROOT(T))-R(x))+1 \leq 3\ (R(ROOT(T)))+1
+\hat{c}_{splay} \leq 3 \cdot (R(ROOT(T))-R(x))+1 \leq 3 \cdot (R(ROOT(T)))+1
 $$
 
 Considerando che $R(ROOT(T)) \approx \log_2(n)$ si ottiene:
