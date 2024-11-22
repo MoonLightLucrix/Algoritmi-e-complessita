@@ -175,7 +175,7 @@ $$
 $$
 
 $$
-\Delta \Phi(T) \leq 2 \cdot R_f(x)-2-2\ R_i(x)
+\Delta \Phi(T) \leq 2 \cdot R_f(x)-2-2 \cdot R_i(x)
 $$
 
 $$
