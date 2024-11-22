@@ -3,13 +3,13 @@
 ## Indice
 
 ### Teoria
-- [2.1 Introduzione](#introduzione)
-- [2.2 Procedura di Splay](#procedura-di-splay)
-  - [2.2.1 Operazioni di rotazione nello Splay Tree](#operazioni-di-rotazione-nello-splay-tree)
-- [2.3 Analisi ammortizzata](#analisi-ammortizzata)
-  - [2.3.1 Costi di rotazione](#costi-di-rotazione)
-  - [2.3.2 Teorema sul costo ammortizzato di splay](#teorema-sul-costo-ammortizzato-di-splay)
-  - [2.3.3 Dimostrazione per casi](#dimostrazione-per-casi)
+- [2.1 Introduzione](#21-introduzione)
+- [2.2 Procedura di Splay](#22-procedura-di-splay)
+  - [2.2.1 Operazioni di rotazione nello Splay Tree](#221-operazioni-di-rotazione-nello-splay-tree)
+- [2.3 Analisi ammortizzata](#23-analisi-ammortizzata)
+  - [2.3.1 Costi di rotazione](#231-costi-di-rotazione)
+  - [2.3.2 Teorema sul costo ammortizzato di splay](#232-teorema-sul-costo-ammortizzato-di-splay)
+  - [2.3.3 Dimostrazione per casi](#233-dimostrazione-per-casi)
     - [Caso Zig](#caso-zig)
     - [Caso Zig-zig](#caso-zig-zig)
     - [Caso Zig-zag](#caso-zig-zag)
