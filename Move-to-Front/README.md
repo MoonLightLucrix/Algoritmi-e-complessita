@@ -50,7 +50,7 @@ Tuttavia, tale costo iniziale potrebbe essere compensato dal risparmio di tempo 
 ### 6.3.1 Teorema della 4-competitività
 Si consideri l'insieme $A = \{a_1, a_2, a_3, \dots, a_n\}$, che rappresenta una sequenza di accessi a una lista generica $L$.
 Si definiscano $C_i^{MF}$ e $C_i^{AL}$ come le configurazioni della lista $L$ dopo l'accesso $a_i$, ottenute rispettivamente con l'algoritmo _Move-to-Front_ e con un algoritmo generico _AL_ (anche ottimale).
-Inoltre, siano $c_i^{MF}$ e $c_i^{AL}$ i costi reali associati al $i$-esimo accesso alla lista per _Move-to-Front_ e per l'algoritmo generico _AL_, rispettivamente.
+Inoltre, siano $c_i^{MF}$ e $c_i^{AL}$ i costi reali associati all' $i$-esimo accesso alla lista per _Move-to-Front_ e per l'algoritmo generico _AL_, rispettivamente.
 
 Si afferma che _Move-to-Front_ è **4-competitivo** rispetto a un algoritmo _AL_ generico se risulta soddisfatta la seguente relazione:
 
