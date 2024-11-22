@@ -86,7 +86,7 @@ $$
 accesso=ricerca+scambi
 $$
 
-ed il costo reale  $c_i^{MF}$ il costo dell'$i$-esimo accesso da parte dell'algoritmo Move-to-Front come:
+ed il costo reale  $c_i^{MF}$ il costo dell' $i$-esimo accesso da parte dell'algoritmo Move-to-Front come:
 
 $$
 c_i^{MF}=k+(k-1)=2k-1
