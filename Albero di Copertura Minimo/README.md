@@ -15,6 +15,13 @@
     - **8.5.1** [Definizione dell'algoritmo di Kruskal](#851-definizione-dellalgoritmo-di-kruskal)
     - **8.5.2** [Correttezza dell'algoritmo di Kruskal](#852-correttezza-dellalgoritmo-di-kruskal)
     - **8.5.3** [Complessità dell'algoritmo di Kruskal](#853-complessità-dellalgoritmo-di-kruskal)
+- **8.6** [Algoritmo di Prim (1957)](#86-algoritmo-di-prim-1957)
+    - **8.6.1** [Definizione dell'algoritmo di Prim](#861-definizione-dellalgoritmo-di-prim)
+    - **8.6.2** [Correttezza dell'algoritmo di Prim](#862-correttezza-dellalgoritmo-di-prim)
+    - **8.6.3** [Complessità dell'algoritmo di Prim](#863-complessità-dellalgoritmo-di-prim)
+- **8.7** [Unicità dell'albero di copertura minimo](#87-unicità-dellalbero-di-copertura-minimo)
+    - **8.7.1** [Lemma dell'unicità dell'albero di copertura minimo](#871-lemma-dellunicità-dellalbero-di-copertura-minimo)
+    - **8.7.2** [Dimostrazione dell'unicità dell'albero di copertura minimo](#872-dimostrazione-dellunicità-dellalbero-di-copertura-minimo)
 
 ## 8.1 Definizione
 
@@ -138,3 +145,94 @@ Si ha che l'ordinamento degli archi ha costo $\mathcal{O}(|E| \cdot \log_2{|V|})
 ovvero un costo di $\mathcal{O}((|E| \cdot \log_2(|V|)) \cdot \alpha(|V|))$.
 
 Ma poiché la complessità di $|V| = \mathcal{O}(|E|)$ la complessità sarà $\mathcal{O}(|E| \cdot \log_2(|V|))$.
+
+## 8.6 Algoritmo di Prim (1957)
+
+### 8.6.1 Definizione dell'algoritmo di Prim
+
+Sia $(G,w)$ dove $G=(V,E)$ un grafo connesso, non orientato e pesato tramite la funzione $w: E \to \mathbb{R}$ e sia $s \in V$ il vertice di partenza o **radice** per la costruzione dell'albero di copertura minimo $T$.
+Allora si eseguino per $|V|-1$ volte le seguenti operazioni:
+- Si consideri l'insieme di archi blu che fanno parte dell'albero $T$.
+- Si selezioni l'arco di peso minimo che connette $T$ ad un vertice esterno.
+- Si colori di blu tale arco aggiungendo il vertice a $T$.
+
+#### Pseudo-codice di Prim
+
+```
+prim(G,w,s):
+    for v in G.V
+    do
+        v.key←∞;
+        v.pred←NIL;
+    s.key=0;
+    q←makeHeap(G.V);
+    while(q≠Ø)
+    do
+        u←extractMin(q);
+        for(v in adj[u])
+        do
+            if((v in q) && (w(u,v)<v.key))
+            then
+                decreaseKey(Q,v,w(u,v));
+                v.pred←u;
+            end if
+    return {(v.pred,v) : v in G.V \ {s}};
+```
+
+### 8.6.2 Correttezza dell'algoritmo di Prim
+
+Sia $(G,w)$ dove $G=(V,E)$ un grafo non orientato, connesso e pesato tramite la funzione $w: E \to \mathbb{R}$ e sia $T=(V,E')$ l'albero blu che viene costruito passo dopo passo della procedura dell'algoritmo di Prim aggiungendo ad $E'$ gli archi di $G$ di peso minimo che sono incidenti a $T$ e che collegano i vertici $v \in V \setminus T.V$.
+
+Si dimostra per induzione su $|V|-1$ passi della procedura dell'algoritmo di Prim che vengono selezionati solo archi blu di peso minimo.
+- **Caso base**: Non è stato selezionato nessun arco blu e l'unico vertice presente in $T$ è $s$ ovvero il vertice di partenza o radice dell'albero.
+- **Passo $k$**: Sia $S$ l'insieme di tutti i vertici selezionati che formano l'albero blu parziale $T$ e si identifichi il taglio $(S,V \setminus S)$, dove $S \neq \emptyset$ perché deve contenere il vertice $s$ e $V \setminus S \neq \emptyset$ se no $T$ sarebbe già un albero di copertura minimo. Tutti gli archi che attraversano il taglio sono non colorati perché gli archi blu sono solo all'interno di $S$, la procedura trova l'arco di peso minimo che collega un vertice $u \in S$ ad un vertice $v \in V \setminus S$ e lo colora di blu.
+- **Passo $|V|-1$**: Al passo $|V|-1$ viene selezionato l'ultimo arco blu, si noti che $T$ è un albero che collega tutti i vertici di $G$ e contenente $|V|-1$ archi blu.
+
+Quindi l'albero $T$ costruito contiene solo archi blu, dato che ogni passo della procedura rispetta l'invariante del colore esiste un albero di copertura minimo che contiene tutti gli archi blu e nessun arco rosso, Dato che $T.E \subseteq MST.E$ segue $w(T) \leq w(MST)$, ma siccome l'albero di copertura minimo **deve** avere peso minore si ha
+
+$$
+w(MST) \leq w(T) \leq w(MST)
+$$
+
+quindi $T$ è un albero di copertura minimo. $\quad \square$
+
+### 8.6.3 Complessità dell'algoritmo di Prim
+
+La procedura di generazione dell'albero di copertura minimo di Prim prevede due fasi:
+- **Inizializzazione**
+- **Costruzione** `extractMin` e `decreaseKey`
+
+Prim utilizza gli heap per tenere traccia degli archi di peso minimo ed utilizzado gli **Heap di Fibonacci** la complessità può essere diminuita:
+
+|                            | Heap Binari                                | Heap Binomiali                           | Heap di Fibonacci                          |
+|----------------------------|--------------------------------------------|------------------------------------------|--------------------------------------------|
+| Inizializzazione           | $\mathcal{O}(\|V\|)$                       | $\mathcal{O}(\|V\|)$                     | $\mathcal{O}(\|V\|)$                         |
+|  $\|V\|$ `extractMin`  | $\mathcal{O}(\|V\| \cdot \log_2(\|V\|))$ | $\mathcal{O}(\|V\| \cdot \log_2(\|V\|))$ | $\mathcal{O}(\|V\| \cdot \log_2(\|V\|))$       |
+| $\|E\|$ `decreaseKey`       | $\mathcal{O}(\|E\| \cdot \log_2(\|V\|))$ | $\mathcal{O}(\|E\| \cdot \log_2(\|V\|))$ | $\mathcal{O}(\|E\| + \|V\| \cdot \log_2(\|V\|))$ |
+|                            | $\mathcal{O}(\|E\| \cdot \log_2(\|V\|))$   | $\mathcal{O}(\|E\| \cdot \log_2(\|V\|))$ | $\mathcal{O}(\|E\| + \|V\| \cdot \log_2(\|V\|))$ |
+
+## 8.7 Unicità dell'albero di copertura minimo
+
+### 8.7.1 Lemma dell'unicità dell'albero di copertura minimo
+
+Sia $(G,w)$ dove $G=(V,E)$ è un grafo non orientato, connesso e pesato tramite la funzione $w : E \to \mathbb{R}$ **iniettiva**.
+Allora $G$ ammette un unico albero di copertura minimo.
+
+### 8.7.2 Dimostrazione dell'unicità dell'albero di copertura minimo
+
+Siano $T_1$ e $T_2$ dove $T_1 \neq T_2$ due alberi di copertura minimi di $G$.
+Dalla differenza simmetrica di $T_1.E \Delta T_2.E$ si ha un arco $(u,v)$ di peso minore che supponiamo appartenga solo a $T_1$ e non a $T_2$.
+Quindi sia $\pi$ un cammino in $T_2$ che connette $u$ a $v$, ovviamente che non contenga $(u,v)$, ma ci sia un arco all'interno di $\pi$ ovvero $(u',v')$ non appartenente a $T_1$ (se no creerebbe un ciclo).
+Si ha
+$$
+w(u,v) < w(u',v')
+$$
+Quindi supponiamo di creare un albero di copertura minimo chiamato $T_2'$ dove
+$$
+T_2'=(T_2 \setminus \{(u',v')\}) \cup \{(u,v)\}
+$$
+Si ha quindi che
+$$
+w(T_2')=w(T_2)-w(u',v')+w(u,v)<w(T_2) 
+$$
+Essendo $T_2$ già un albero di copertura minimo è impossibile trovare un albero di copertura minimo $T_2'$ con costo minore, qui c'è l'assurdo. $\quad \square$
