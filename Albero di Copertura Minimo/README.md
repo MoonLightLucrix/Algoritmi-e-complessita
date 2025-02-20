@@ -224,15 +224,21 @@ Siano $T_1$ e $T_2$ dove $T_1 \neq T_2$ due alberi di copertura minimi di $G$.
 Dalla differenza simmetrica di $T_1.E \Delta T_2.E$ si ha un arco $(u,v)$ di peso minore che supponiamo appartenga solo a $T_1$ e non a $T_2$.
 Quindi sia $\pi$ un cammino in $T_2$ che connette $u$ a $v$, ovviamente che non contenga $(u,v)$, ma ci sia un arco all'interno di $\pi$ ovvero $(u',v')$ non appartenente a $T_1$ (se no creerebbe un ciclo).
 Si ha
+
 $$
 w(u,v) < w(u',v')
 $$
+
 Quindi supponiamo di creare un albero di copertura minimo chiamato $T_2'$ dove
+
 $$
 T_2'=(T_2 \setminus \{(u',v')\}) \cup \{(u,v)\}
 $$
+
 Si ha quindi che
+
 $$
 w(T_2')=w(T_2)-w(u',v')+w(u,v)<w(T_2) 
 $$
+
 Essendo $T_2$ già un albero di copertura minimo è impossibile trovare un albero di copertura minimo $T_2'$ con costo minore, qui c'è l'assurdo. $\quad \square$
