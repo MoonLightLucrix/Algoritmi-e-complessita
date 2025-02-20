@@ -115,15 +115,15 @@ allora seguendo tale ordinamento se $e_i$ attraversa un taglio $(V_1,V_2)$ lo si
 ```
 kruskal(G,w):
     T←(V,Ø);
-    for v in G.V
+    for v ∈ G.V
     do
         makeSet(v);
     sort(G.E,w);
-    for (u,v) in G.E
+    for (u,v) ∈ G.E
     do
         if(findSet(u)≠findSet(v))
         then
-            T.E←T.E+(u,v); 
+            T.E←T.E ∪ {(u,v)};
             unite(u,v);
         end if
     return T;
@@ -160,7 +160,7 @@ Allora si eseguino per $|V|-1$ volte le seguenti operazioni:
 
 ```
 prim(G,w,s):
-    for v in G.V
+    for v ∈ G.V
     do
         v.key←∞;
         v.pred←NIL;
@@ -169,14 +169,14 @@ prim(G,w,s):
     while(q≠Ø)
     do
         u←extractMin(q);
-        for(v in adj[u])
+        for(v ∈ adj[u])
         do
-            if((v in q) && (w(u,v)<v.key))
+            if((v ∈ q) && (w((u,v))<v.key))
             then
-                decreaseKey(Q,v,w(u,v));
+                decreaseKey(Q,v,w((u,v)));
                 v.pred←u;
             end if
-    return {(v.pred,v) : v in G.V \ {s}};
+    return {(v.pred,v) : v ∈ G.V \ {s}};
 ```
 
 ### 8.6.2 Correttezza dell'algoritmo di Prim
